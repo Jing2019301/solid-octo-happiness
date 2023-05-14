@@ -1,0 +1,162 @@
+html, body{
+    margin: 0;
+    font-family: helvetica, "PingFang SC", "Microsft Yahei", sans-serif;
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+
+
+html {
+  /*Need to hide the outermost scroll bar for parallax to take effect*/
+    overflow: hidden;
+}
+
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    /*Turn on 3D space, the smaller the value, the greater the 3D effect*/
+    perspective: 1px;
+    /*Transformation in 3D space*/
+    transform-style: preserve-3d;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+
+    transform-style: inherit;
+    height: 100vh;
+
+}
+header h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: lem 4em;
+    font-size: 3em;
+}
+
+header::before{
+    content: "";
+    display: block;
+    background-image: url(img/1.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    /*Core, press Z-axis to move 1px farther away, the size will be reduced by 1 times, use scale to enlarge to the original size*/
+    transform: translateZ(-1px) scale(2);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: #222f3e;
+
+}
+
+
+ul, li{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+
+}
+
+ul {
+   position: relative;
+   display: flex;
+}
+ul li {
+    list-style: none;
+    width: 120px;
+    line-height: 40px;
+    text-align: center;
+
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+
+}
+
+.slider {
+    width: 100px;
+    height: 40px;
+    background-color: #5352ed;
+    border-radius: 4px;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    z-index: -1;
+    transition: all ease, 0.4s;
+}
+
+li:nth-child(1):hover ~ .slider {
+    left: 10px;
+
+}
+
+li:nth-child(2):hover ~ .slider {
+    left: 128px;
+    
+}
+
+li:nth-child(3):hover ~ .slider {
+    left: 248px;
+    
+}
+
+
+article{
+    width: 90vw;
+    max-width: 960px;
+    padding: 6em 0;
+    color: white;
+    font-size: 18px;
+    text-align: justify;
+    letter-spacing: 0.075em;
+    text-indent: 2em;
+    line-height: 1.8em;
+
+}
+
+/*Screen adaptation*/
+@media screen and (max-width: 102px){
+    header h1{
+        font-size: 2.5em;
+        padding: 1em 1.5em;
+
+    }
+}
+
+@media screen and (max-width:600px){
+    header h1{
+        font-size: 1.5em;
+        padding: 1em 1em; 
+    }
+
+    article{
+        font-size: 1em;
+    }
+}
