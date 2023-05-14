@@ -1,0 +1,43 @@
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        height:100vh;
+        Color: #fff;
+        background-image: linear-gradient(
+            125deg,#2c3e50,#27ae60,
+            #2980b9,#e74c3c,#8e44ad
+            );
+        background-size:400%;
+        animation: bgmove 20s infinite;
+   }
+       @keyframes bgmove{
+          0%{
+             background-position: 0% 50%;
+             }
+         50%{
+             background-position: 100% 50%;
+           }
+        100%{
+         background-position: 0% 50%;
+          }
+
+    }
+
+    .wrapper {
+        display: flex;
+      }
+      
+      .wrapper > div {
+        flex: 1;
+      }
+      <div class="wrapper">
+    <div class="box1">Information</div>
+    <div class="box2">class</div>
+     <div class="box3">message</div>
+    </div>
+
+   
+
